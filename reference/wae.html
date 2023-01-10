@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="This is an activemq eavesdropper.">
+  <meta name="keywords" content="activemq, stomp, websocket, SPA">
+  <title>WebSocket ActiveMQ Eavesdropper</title>
+  <link rel="stylesheet" href="wae.css">
+</head>
+
+<body>
+  <div id="wrapper">
+    <header id="main_header">
+      <h1>WebSocket ActiveMQ Eavesdropper</h1>
+    </header>
+
+    <nav id="main_menu">
+      <ul>
+        <li>
+	        <label for="servers">Choose a server:</label>
+
+          <select id="servers" onchange="changeServer()">
+            <option value="Bandersnatch">Bandersnatch</option>
+            <option value="Joe">Joe</option>
+            <option value="Jumar">Jumar</option>
+          </select>
+	      </li>
+        <li>
+	        <label for="topics">Choose a topic:</label>
+
+          <select id="topics" onchange="changeTopic()">
+            <option value="/topic/ARCINDI/responses">
+              arcindi-responses
+	          </option>
+            <option value="/topic/ARCINDI/testtest">
+              arcindi-testtest
+	          </option>
+            <option value="/topic/TCS.TCSSharedVariables.TCSHighLevelStatusSV.TCSTcsStatusSV">
+	            TCSHighLevelStatusSV
+            </option>
+            <option value="/topic/TCS.TCSSharedVariables.TCSSubData.TCSActiveOpticsCommandSV">
+	            TCSActiveOpticsCommandSV
+            </option>
+            <option value="/topic/TCS.TCSSharedVariables.TCSSubData.TCSGuiderCommandSV">
+	            TCSGuiderCommandSV
+            </option>
+            <option value="/topic/TCS.TCSSharedVariables.TCSSubData.TCSTcsCommandSV">
+	            TCSTcsCommandSV
+            </option>
+            <option value="/topic/WRS.WRSPubDataSV.WRSDataPacket">
+	            WRSDataPacket
+            </option>
+            <option value="/topic/LOUI.lemi.loisCommand">
+	            LOUI.lemi.loisCommand
+            </option>
+            <option value="/topic/wrs.loisTelemetry">
+	            wrs.loisTelemetry
+            </option>
+            <option value="/topic/RC2.loisTelemetry">
+	            RC2.loisTelemetry
+	    </option>
+            <option value="/topic/TCS.TCSSharedVariables.TCSLowLevelStatusSV.TCSActiveOpticsCommandResponseSV">
+	            ActiveOpticsCommandResponse
+	    </option>
+            <option value="/topic/AOS.AOSPubDataSV.AOSDataPacket">
+	            AOSDataPacket
+	    </option>
+          </select>
+	      </li>
+      </ul>
+    </nav>
+    <p id="demo"></p>
+  </div>
+  
+  <script src="./stomp.js"></script>
+  <script type="text/javascript">
+
+    function changeServer() {
+      var x = document.getElementById("servers").value;
+      subscription.unsubscribe();
+      client.disconnect(function () { console.log("disconnecting")});
+      document.getElementById("demo").innerHTML = "";
+      if (x == "Jumar") {
+        console.log("ws://jumar:61614/stomp");
+        server = "ws://jumar:61614/stomp";
+        connectClient(server, topic);
+      } else if (x == "Joe") {
+        console.log("ws://joe:61614/stomp");
+        server = "ws://joe:61614/stomp";
+	      connectClient(server, topic);
+      } else if (x == "Bandersnatch") {
+        console.log("ws://bandersnatch:61614/stomp");
+        server = "ws://bandersnatch:61614/stomp";
+	      connectClient(server, topic);
+      }
+    }
+
+    function changeTopic() {
+      var x = document.getElementById("topics").value;
+      subscription.unsubscribe();
+      client.disconnect(function () { console.log("disconnecting")});
+      document.getElementById("demo").innerHTML = "";
+      topic = x
+      connectClient(server, topic);
+    }
+
+    function BuildXMLFromString (text) {
+      var message = "";
+      var parser = new DOMParser();
+      try {
+        xmlDoc = parser.parseFromString (text, "text/xml");
+      } catch (e) {
+          // if text is not well-formed, 
+          // it raises an exception in IE from version 9
+        alert ("XML parsing error.");
+        return false;
+      };
+
+      var errorMsg = null;
+      if (xmlDoc.parseError && xmlDoc.parseError.errorCode != 0) {
+        errorMsg = "XML Parsing Error: " + xmlDoc.parseError.reason
+            + " at line " + xmlDoc.parseError.line
+            + " at position " + xmlDoc.parseError.linepos;
+      }
+      else {
+        if (xmlDoc.documentElement) {
+          if (xmlDoc.documentElement.nodeName == "parsererror") {
+            errorMsg = xmlDoc.documentElement.childNodes[0].nodeValue;
+          }
+        }
+        else {
+          errorMsg = "XML Parsing Error!";
+        }
+      }
+
+      if (errorMsg) {
+        /* alert (errorMsg); */
+        return false;
+      }
+
+      /* alert ("Parsing was successful!"); */
+      return true;
+    }
+
+    function xmlToForm(xmlDoc) {
+  
+	    var nodes = xmlDoc.querySelectorAll("*");
+
+      var framed_html = "<pre>";
+      for (var i = 0; i < nodes.length; i++) {
+        var text = null;
+        if (nodes[i].childNodes.length == 1 &&
+            nodes[i].childNodes[0].nodeType == 3) //if nodeType == text node
+          text = nodes[i].textContent; //get text of the node
+        framed_html += nodes[i].tagName;
+        framed_html += " -- ";
+        if (text != null) {
+          framed_html += text;
+        }
+        framed_html += "<br>";
+      }
+      framed_html += "</pre>";
+	    return(framed_html);
+    }
+
+    function connectClient(server, topic) {
+      delete client;
+      client = Stomp.client(server, "v11.stomp");
+      client.connect("", "", 
+        function() {
+	        subscription = client.subscribe(topic,
+	          function(message) {
+	            var xmlStr = message.body;
+	      
+              tf = BuildXMLFromString(xmlStr);
+              if (tf) {
+                document.getElementById("demo").innerHTML = xmlToForm(xmlDoc);
+              } else {
+                document.getElementById("demo").innerHTML = message.body;
+              }
+	          }, {priority: 9 }
+	        );
+	      }
+      );
+    }
+
+    var server = "ws://bandersnatch:61614/stomp";
+    var topic = "/topic/ARCINDI/responses";
+    connectClient(server, topic);
+  </script>
+
+</body>
+</html>

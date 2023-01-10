@@ -1,0 +1,23 @@
+{
+    "Camera_Broadcast_Topic": "lorax.timo.camera.broadcast",
+    "Camera_keys": [
+        "connected",
+        "temp",
+        "exposing",
+        "filter"
+    ],
+    "Mount_Broadcast_Topic": "lorax.timo.mount.broadcast",
+    "Mount_keys": [
+        "connected",
+        "slewing",
+        "azimuth",
+        "elevation"
+    ],
+    "Dome_Broadcast_Topic": "lorax.timo.dome.broadcast",
+    "Dome_keys": [
+        "connected",
+        "moving",
+        "closed"
+    ],
+    "Broker_host": "tanagra:61614"
+}

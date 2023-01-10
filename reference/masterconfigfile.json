@@ -1,0 +1,1493 @@
+{
+   "instrument-config": {
+      "user-accounts": {
+         "user-account": [
+            {
+               "user-id": "developer",
+               "md5-password": "5e8edd851d2fdfbd7415232c67367cc3"
+            },
+            {
+               "user-id": "szoonem",
+               "md5-password": "c643f35f1c91abbd4ab6c819f491be8e"
+            },
+            {
+               "user-id": "obshipo",
+               "md5-password": "8e5e5df2d7d09e45c2c35d9519587013"
+            }
+         ]
+      },
+      "ntp": {
+         "time-server": "gps1.lowell.edu",
+         "maximum-time-offset": "500"
+      },
+      "image-types": {
+         "type": [
+            "object",
+            "bias",
+            "sky flat",
+            "dome flat",
+            "focus",
+            "dark"
+         ]
+      },
+      "status-bar": {
+         "fold-mirror-period": "10000",
+         "fold-mirror-delay": "5000",
+         "dome": {
+            "heartbeat-period": "1000",
+            "heartbeat-wait-cycle": "10"
+         }
+      },
+      "mail": {
+         "host": "mail.lowell.edu",
+         "from": {
+            "address": "szk@lowell.edu",
+            "name": "Saeid Zoonemat Kermani"
+         },
+         "to": {
+            "address": "szk@lowell.edu",
+            "name": "Saeid Zoonemat Kermani"
+         },
+         "subject": "LOUI Error"
+      },
+      "tcs-dither-limit": "900.0",
+      "joe": {
+         "telemetry-period": "2000",
+         "telemetry-delay": "1000",
+         "readout-period": "1000",
+         "readout-delay": "1000",
+         "heartbeat-period": "1000",
+         "heartbeat-wait-cycle": "5",
+         "time-between-active-socket-probes": "60000",
+         "socket-probes-frequency-timeout": "5",
+         "tcs-topics": {
+            "tcs-topic": [
+               {
+                  "name": "TCS.TCSSharedVariables.TCSHighLevelStatusSV.TCSTcsStatusSV",
+                  "joe-topic-name": "",
+                  "frequency": "5",
+                  "message-logger": ".tcsStatus"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSLowLevelStatusSV.NewScienceTargetSV",
+                  "joe-topic-name": "",
+                  "frequency": "1",
+                  "message-logger": ".newScienceTarget"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSLowLevelStatusSV.TCSTcsCommandSV",
+                  "joe-topic-name": "",
+                  "frequency": "1",
+                  "message-logger": ".tcsCommand"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSLowLevelStatusSV.TCSTcsCommandResponseSV",
+                  "joe-topic-name": "",
+                  "frequency": "1",
+                  "message-logger": ".tcsCommand"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSHighLevelStatusSV.TCSGuiderStatusSV",
+                  "joe-topic-name": "",
+                  "frequency": "20",
+                  "message-logger": ".tcsGuiderStatus"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSLowLevelStatusSV.TCSGuiderCommandSV",
+                  "joe-topic-name": "",
+                  "frequency": "1",
+                  "message-logger": ".tcsGuiderCommand"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSLowLevelStatusSV.TCSGuiderCommandResponseSV",
+                  "joe-topic-name": "",
+                  "frequency": "1",
+                  "message-logger": ".tcsGuiderCommand"
+               },
+               {
+                  "name": "TCS.TCSSharedVariables.TCSHighLevelStatusSV.TCSWavefrontSensorStatusSV",
+                  "joe-topic-name": "",
+                  "frequency": "20",
+                  "message-logger": ".tcsWavefrontSensorStatus"
+               }
+            ]
+         },
+         "lois-producer-topics": {
+            "topic-name": [
+               "loisAnalysis",
+               "loisCommandResult",
+               "loisImage",
+               "loisLog",
+               "loisTelemetry"
+            ]
+         },
+         "gwaves-producer-topics": {
+            "topic-name": [
+               "loisCommand"
+            ]
+         }
+      },
+      "rcprobe": {
+         "maximum-number-images": "1",
+         "storage-config": {
+            "path": "/data/lois",
+            "telescope-id": "dct",
+            "instrument-id": "gwaves",
+            "filename-abbr": "",
+            "root-filename-date": "true",
+            "date-noon-rule": "true",
+            "dash-number": "off"
+         },
+         "filter-wheels": {
+            "filter-wheel": [
+               {
+                  "name": "RC Probe Filter Wheel",
+                  "home-value": "1",
+                  "filters": {
+                     "filter": [
+                        {
+                           "position": "1",
+                           "display-name": "OPEN",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "OPEN",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "2",
+                           "display-name": "R",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "R",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "3",
+                           "display-name": "MLM1750",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "MLM1750",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "4",
+                           "display-name": "MLM768",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "MLM768_86",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "5",
+                           "display-name": "U",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "U",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "6",
+                           "display-name": "B",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "B",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "7",
+                           "display-name": "V",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "V",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "8",
+                           "display-name": "I",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "I",
+                           "wavelength": "0.0"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         "focal-plane": {
+            "rc1": {
+               "tx": "135.90",
+               "ty": "185.50",
+               "sx": "1.0",
+               "sy": "-1.0",
+               "angle": "5.25"
+            },
+            "rc2": {
+               "tx": "142.17",
+               "ty": "185.19",
+               "sx": "-1.0",
+               "sy": "1.0",
+               "angle": "5.3"
+            }
+         },
+         "tcs": {
+            "offset-parameters": {
+               "rc1": {
+                  "x-reference": "140.0",
+                  "y-reference": "136.0",
+                  "plate-scale": "0.336",
+                  "rotation-angle": "0.0",
+                  "iaa": "274.5",
+                  "box-size": "30",
+                  "sx": "1.0",
+                  "sy": "-1.0",
+                  "guider-limit": "2.0"
+               },
+               "rc2": {
+                  "x-reference": "136.57",
+                  "y-reference": "145.95",
+                  "plate-scale": "0.336",
+                  "rotation-angle": "0.0",
+                  "iaa": "96.3",
+                  "box-size": "30",
+                  "sx": "1.0",
+                  "sy": "-1.0",
+                  "guider-limit": "2.0"
+               }
+            },
+            "guider-transformation": {
+               "ccd-plate-scale": "0.026",
+               "guider-focal-plane-scale": "13.85",
+               "telescope-focal-plane-scale": "8.06",
+               "rc1": {
+                  "tx": "0.0",
+                  "ty": "0.0",
+                  "sx": "-1.0",
+                  "sy": "1.0",
+                  "angle": "90.0"
+               },
+               "rc2": {
+                  "tx": "0.0",
+                  "ty": "0.0",
+                  "sx": "-1.0",
+                  "sy": "1.0",
+                  "angle": "-90.0"
+               }
+            }
+         },
+         "guider": {
+            "analysis-parameters": {
+               "size": "50",
+               "gain": "1.0",
+               "radius": "7",
+               "inner-sky": "10.0",
+               "outer-sky": "14.0"
+            },
+            "non-sidereal-poll-period": {
+               "fast": "5000",
+               "standard": "10000",
+               "slow": "20000"
+            }
+         },
+         "aos-auto-focus": {
+            "rc1": "0.01131",
+            "rc2": "0.01132"
+         },
+         "storage-warning": "20000000"
+      },
+      "deveny": {
+         "maximum-number-images": "1",
+         "storage-config": {
+            "path": "/home/obsdeveny",
+            "telescope-id": "",
+            "instrument-id": "",
+            "filename-abbr": "",
+            "root-filename-date": "true",
+            "date-noon-rule": "true",
+            "dash-number": "off"
+         },
+         "tcs": {
+            "offset-parameters": {
+               "x-reference": "1550",
+               "y-reference": "1550",
+               "plate-scale": "0.240",
+               "rotation-angle": "0.0",
+               "iaa": "6.0",
+               "box-size": "30",
+               "sx": "1.0",
+               "sy": "-1.0"
+            }
+         },
+         "image-types": {
+            "type": [
+               "comparison"
+            ]
+         },
+         "dsp-configuration-files": {
+            "configuration-file-info": {
+               "path": "specialccdcfgs/hipo_blue.0x04_0x86_05.cfg",
+               "comment1": "Very fast\\, noisy\\, full well OK",
+               "comment2": "Very low light and moderately unflattenable",
+               "comment3": "gain(7.43\\,7.22) rnse(11.0\\,11.0) well 14667"
+            }
+         },
+         "pdu-sockets": {
+            "socket": [
+               "2",
+               "3",
+               "4",
+               "5"
+            ]
+         },
+         "quick-look-box": {
+            "along-dispersion": "7",
+            "cross-dispersion": "21"
+         },
+         "storage-warning": "10000000",
+         "filter-wheels": {
+            "filter-wheel": [
+               {
+                  "name": "DeVeny Filter Wheel 1",
+                  "home-value": "1",
+                  "filters": {
+                     "filter": [
+                        {
+                           "position": "1",
+                           "display-name": "Clear (1)",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "Clear (1)",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "2",
+                           "display-name": "GG420 (2)",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "GG420 (2)",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "3",
+                           "display-name": "GG495 (3)",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "GG495 (3)",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "4",
+                           "display-name": "OG570 (4)",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "OG570 (4)",
+                           "wavelength": "0.0"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         "gratings": {
+            "grating": [
+               {
+                  "display-name": "150/5000 g/mm / A blaze",
+                  "fits-header-value": "150/5000"
+               },
+               {
+                  "display-name": "300/4000 g/mm / A blaze",
+                  "fits-header-value": "300/4000"
+               },
+               {
+                  "display-name": "300/6750 g/mm / A blaze",
+                  "fits-header-value": "300/6750"
+               },
+               {
+                  "display-name": "400/8500 g/mm / A blaze",
+                  "fits-header-value": "400/8500"
+               },
+               {
+                  "display-name": "500/5500 g/mm / A blaze",
+                  "fits-header-value": "500/5500"
+               },
+               {
+                  "display-name": "600/4900 g/mm / A blaze",
+                  "fits-header-value": "600/4900"
+               },
+               {
+                  "display-name": "600/6750 g/mm / A blaze",
+                  "fits-header-value": "600/6750"
+               },
+               {
+                  "display-name": "831/8000 g/mm / A blaze",
+                  "fits-header-value": "831/8000"
+               },
+               {
+                  "display-name": "1200/5000 g/mm / A blaze",
+                  "fits-header-value": "1200/5000"
+               }
+            ]
+         },
+         "focus": {
+            "log-header": {
+               "_xml:space": "preserve",
+               "__text": ":    Image File Name  ColFoc    Grating  GrTilt  SltWth     Filter    LampCal  MntTmp"
+            },
+            "execution-period": "1000"
+         }
+      },
+      "lmi": {
+         "maximum-number-images": "1",
+         "storage-config": {
+            "path": "",
+            "telescope-id": "",
+            "instrument-id": "lmi",
+            "filename-abbr": "lmi",
+            "root-filename-date": "false",
+            "date-noon-rule": "true",
+            "dash-number": "off"
+         },
+         "tcs": {
+            "offset-parameters": {
+               "x-reference": "3130",
+               "y-reference": "3064",
+               "plate-scale": "0.120",
+               "rotation-angle": "0.0",
+               "iaa": "185.2",
+               "box-size": "30",
+               "sx": "1.0",
+               "sy": "-1.0"
+            }
+         },
+         "pettern-function-execution-period": "1000",
+         "filter-wheels": {
+            "filter-wheel": [
+               {
+                  "name": "Lower Filter Wheel (FW1)",
+                  "home-value": "1",
+                  "backstep-percentage": "20",
+                  "filters": {
+                     "filter": [
+                        {
+                           "position": "1",
+                           "display-name": "OPEN",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "OPEN",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "2",
+                           "display-name": "SL-u",
+                           "focus-offset": "1.8E-4",
+                           "fits-header-value": "SDSS-U",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "3",
+                           "display-name": "SL-g",
+                           "focus-offset": "1.8E-4",
+                           "fits-header-value": "SDSS-G",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "4",
+                           "display-name": "SL-r",
+                           "focus-offset": "1.8E-4",
+                           "fits-header-value": "SDSS-R",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "5",
+                           "display-name": "SL-i",
+                           "focus-offset": "1.8E-4",
+                           "fits-header-value": "SDSS-I",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "6",
+                           "display-name": "SL-z",
+                           "focus-offset": "1.8E-4",
+                           "fits-header-value": "SDSS-Z",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "7",
+                           "display-name": "CN",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "CN",
+                           "wavelength": "0.387"
+                        },
+                        {
+                           "position": "8",
+                           "display-name": "RC",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "RC",
+                           "wavelength": "0.7128"
+                        },
+                        {
+                           "position": "9",
+                           "display-name": "VR",
+                           "focus-offset": "1.85E-4",
+                           "fits-header-value": "VR",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "10",
+                           "display-name": "C2",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "C2",
+                           "wavelength": "0.5141"
+                        }
+                     ]
+                  }
+               },
+               {
+                  "name": "Upper Filter Wheel (FW2)",
+                  "home-value": "1",
+                  "backstep-percentage": "20",
+                  "filters": {
+                     "filter": [
+                        {
+                           "position": "1",
+                           "display-name": "OPEN",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "OPEN",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "2",
+                           "display-name": "DARK",
+                           "focus-offset": "0.0",
+                           "fits-header-value": "DARK",
+                           "wavelength": "0.0"
+                        },
+                        {
+                           "position": "3",
+                           "display-name": "OH",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "OH",
+                           "wavelength": "0.309"
+                        },
+                        {
+                           "position": "4",
+                           "display-name": "UC",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "UC",
+                           "wavelength": "0.3448"
+                        },
+                        {
+                           "position": "5",
+                           "display-name": "BC",
+                           "focus-offset": "1.75E-4",
+                           "fits-header-value": "BC",
+                           "wavelength": "0.445"
+                        },
+                        {
+                           "position": "6",
+                           "display-name": "I",
+                           "focus-offset": "1.4E-4",
+                           "fits-header-value": "I",
+                           "wavelength": "0.8064"
+                        },
+                        {
+                           "position": "7",
+                           "display-name": "R",
+                           "focus-offset": "1.4E-4",
+                           "fits-header-value": "R",
+                           "wavelength": "0.6329"
+                        },
+                        {
+                           "position": "8",
+                           "display-name": "V",
+                           "focus-offset": "1.05E-4",
+                           "fits-header-value": "V",
+                           "wavelength": "0.5369"
+                        },
+                        {
+                           "position": "9",
+                           "display-name": "B",
+                           "focus-offset": "1.05E-4",
+                           "fits-header-value": "B",
+                           "wavelength": "0.4277"
+                        },
+                        {
+                           "position": "10",
+                           "display-name": "U",
+                           "focus-offset": "1.4E-4",
+                           "fits-header-value": "U",
+                           "wavelength": "0.3656"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         "focus-parameters": {
+            "bin": "2",
+            "exposure-time": "3.0",
+            "flags": "save",
+            "focus-step": "30.0",
+            "focus-base": "150.0",
+            "title": "Focus Run"
+         },
+         "pointing-data-collection-subframe": {
+            "subframe-number": "9",
+            "xpix": "1565",
+            "ypix": "1532",
+            "xsize": "200",
+            "ysize": "200"
+         },
+         "pre-scan": "50",
+         "dsp-configuration-files": {
+            "configuration-file-info": {
+               "path": "specialccdcfgs/hipo_blue.0x04_0x86_05.cfg",
+               "comment1": "Very fast\\, noisy\\, full well OK",
+               "comment2": "Very low light and moderately unflattenable",
+               "comment3": "gain(7.43\\,7.22) rnse(11.0\\,11.0) well 14667"
+            }
+         },
+         "storage-warning": "50000000"
+      },
+      "nihts": {
+         "maximum-number-images": "2",
+         "storage-config": {
+            "path": "",
+            "telescope-id": "",
+            "instrument-id": "nihts",
+            "filename-abbr": "",
+            "root-filename-date": "true",
+            "date-noon-rule": "true",
+            "dash-number": "off"
+         },
+         "tcs": {
+            "offset-parameters": {
+               "x-reference": "1550",
+               "y-reference": "1550",
+               "plate-scale": "0.240",
+               "rotation-angle": "0.0",
+               "iaa": "6.0",
+               "box-size": "30",
+               "sx": "1.0",
+               "sy": "-1.0"
+            }
+         },
+         "image-types": {
+            "type": [
+               "comparison"
+            ]
+         },
+         "dsp-configuration-files": {
+            "configuration-file-info": {
+               "path": "specialccdcfgs/hipo_blue.0x04_0x86_05.cfg",
+               "comment1": "Very fast\\, noisy\\, full well OK",
+               "comment2": "Very low light and moderately unflattenable",
+               "comment3": "gain(7.43\\,7.22) rnse(11.0\\,11.0) well 14667"
+            }
+         },
+         "storage-warning": "20000000"
+      },
+      "igrins": {
+         "tcs": {
+            "offset-parameters": {
+               "x-reference": "1550",
+               "y-reference": "1550",
+               "plate-scale": "0.240",
+               "rotation-angle": "0.0",
+               "iaa": "5.2",
+               "box-size": "30",
+               "sx": "1.0",
+               "sy": "-1.0"
+            }
+         }
+      },
+      "oms-cards": {
+         "oms-card": [
+            {
+               "name": "RC1",
+               "address": "10.11.131.91",
+               "port": "4321",
+               "enable": "true",
+               "axes": {
+                  "axis": [
+                     {
+                        "name": "AX",
+                        "function": "RC1.X",
+                        "description": "X Axis for Probe 1",
+                        "initialization-command": "PA1; LTH; HH; PSE; EDI;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "25000",
+                        "acceleration": "25000",
+                        "min-value": "0.0",
+                        "max-value": "291.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "2500",
+                        "encoder-scale": "10000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AY",
+                        "function": "RC1.Y",
+                        "description": "Y Axis for Probe 1",
+                        "initialization-command": "PA1; LTH; HH; PSE; EDI;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "25000",
+                        "acceleration": "25000",
+                        "min-value": "0.0",
+                        "max-value": "189.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "2500",
+                        "encoder-scale": "10000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AZ",
+                        "function": "RC1.Z",
+                        "description": "Z Axis (Focus) for Probe 1",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HR;",
+                        "velocity": "12500",
+                        "acceleration": "12500",
+                        "min-value": "0.0",
+                        "max-value": "92.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "6300",
+                        "encoder-scale": "63000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AT",
+                        "function": "RC1.F",
+                        "description": "Filter Wheel for Probe 1",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "100",
+                        "acceleration": "1000",
+                        "min-value": "1",
+                        "max-value": "8",
+                        "home-value": "1",
+                        "increment-value": "1",
+                        "motor-scale": "100",
+                        "encoder-scale": "-1.0",
+                        "unit": "position #",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     }
+                  ]
+               }
+            },
+            {
+               "name": "RC2",
+               "address": "10.11.131.92",
+               "port": "4321",
+               "enable": "true",
+               "axes": {
+                  "axis": [
+                     {
+                        "name": "AX",
+                        "function": "RC2.X",
+                        "description": "X Axis for Probe 2",
+                        "initialization-command": "PA1; LTH; HH; PSE; EDI;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "25000",
+                        "acceleration": "25000",
+                        "min-value": "0.0",
+                        "max-value": "291.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "2500",
+                        "encoder-scale": "10000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AY",
+                        "function": "RC2.Y",
+                        "description": "Y Axis for Probe 2",
+                        "initialization-command": "PA1; LTH; HH; PSE; EDI;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "25000",
+                        "acceleration": "25000",
+                        "min-value": "0.0",
+                        "max-value": "189.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "2500",
+                        "encoder-scale": "10000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AZ",
+                        "function": "RC2.Z",
+                        "description": "Z Axis (Focus) for Probe 2",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HR;",
+                        "velocity": "12500",
+                        "acceleration": "12500",
+                        "min-value": "0.0",
+                        "max-value": "93.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "6300",
+                        "encoder-scale": "63000",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AT",
+                        "function": "RC2.F",
+                        "description": "Filter Wheel for Probe 2",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "100",
+                        "acceleration": "1000",
+                        "min-value": "1",
+                        "max-value": "8",
+                        "home-value": "1",
+                        "increment-value": "1",
+                        "motor-scale": "100",
+                        "encoder-scale": "-1.0",
+                        "unit": "position #",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     }
+                  ]
+               }
+            },
+            {
+               "name": "OMS3",
+               "address": "10.11.131.93",
+               "port": "4321",
+               "enable": "true",
+               "axes": {
+                  "axis": [
+                     {
+                        "name": "AX",
+                        "function": "FM-A",
+                        "description": "IGRINS",
+                        "initialization-command": "PA1; LTH; HTH;",
+                        "home-command": "HR0;MA0;GO;ID",
+                        "velocity": "2500",
+                        "acceleration": "10000",
+                        "min-value": "0.0",
+                        "max-value": "37536.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "157.48",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AY",
+                        "function": "FM-B",
+                        "description": "EXPRES",
+                        "initialization-command": "PA1; LTH; HTH;",
+                        "home-command": "HR;MA0;GO;ID",
+                        "velocity": "2500",
+                        "acceleration": "10000",
+                        "min-value": "0.0",
+                        "max-value": "38795.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "157.48",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AT",
+                        "function": "LMI.F1",
+                        "description": "Lower Filter Wheel for LMI",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HM0; MA0; GO; ID;",
+                        "velocity": "500",
+                        "acceleration": "750",
+                        "min-value": "1",
+                        "max-value": "10",
+                        "home-value": "1",
+                        "increment-value": "10",
+                        "motor-scale": "465",
+                        "encoder-scale": "-1.0",
+                        "unit": "position #",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     }
+                  ]
+               }
+            },
+            {
+               "name": "OMS4",
+               "address": "10.11.131.94",
+               "port": "4321",
+               "enable": "true",
+               "axes": {
+                  "axis": [
+                     {
+                        "name": "AX",
+                        "function": "FM-C",
+                        "description": "DeVeny Spectrograph",
+                        "initialization-command": "PA1; LTH; HTH;",
+                        "home-command": "HR0;MA0;GO;ID",
+                        "velocity": "2500",
+                        "acceleration": "10000",
+                        "min-value": "0.0",
+                        "max-value": "37385.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "157.48",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AY",
+                        "function": "FM-D",
+                        "description": "NIHTS",
+                        "initialization-command": "PA1; LTH; HTH;",
+                        "home-command": "HR0;MA0;GO;ID",
+                        "velocity": "2500",
+                        "acceleration": "10000",
+                        "min-value": "0.0",
+                        "max-value": "38151.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "157.48",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AZ",
+                        "function": "IC",
+                        "description": "Instrument Cover",
+                        "initialization-command": "PA1; LTH; HL;",
+                        "home-command": "HR;",
+                        "velocity": "200",
+                        "acceleration": "1000",
+                        "min-value": "0.0",
+                        "max-value": "1615",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "81.37",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00 in",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AT",
+                        "function": "LMI.F2",
+                        "description": "Upper Filter Wheel for LMI",
+                        "initialization-command": "PA1; LTL; HL;",
+                        "home-command": "HM0; MA0; GO; ID;",
+                        "velocity": "500",
+                        "acceleration": "750",
+                        "min-value": "1",
+                        "max-value": "10",
+                        "home-value": "1",
+                        "increment-value": "10",
+                        "motor-scale": "470",
+                        "encoder-scale": "-1.0",
+                        "unit": "position #",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     }
+                  ]
+               }
+            },
+            {
+               "name": "DEVENY",
+               "address": "devenymot1.lowell.edu",
+               "port": "4321",
+               "enable": "true",
+               "axes": {
+                  "axis": [
+                     {
+                        "name": "AX",
+                        "function": "DGT",
+                        "description": "Grating Tilt",
+                        "initialization-command": "LTH; HTH; PA1; PSE; ECI;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "5000",
+                        "acceleration": "250000",
+                        "min-value": "0.0",
+                        "max-value": "48.0",
+                        "home-value": "0.0",
+                        "increment-value": "1",
+                        "motor-scale": "15384.6",
+                        "encoder-scale": "1230.77",
+                        "unit": "#0.00°",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AY",
+                        "function": "DSW",
+                        "description": "Slit Width",
+                        "initialization-command": "LTL; HTH; PA1;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "1600",
+                        "acceleration": "16000",
+                        "min-value": "0.490",
+                        "max-value": "85.62",
+                        "home-value": "85.62",
+                        "increment-value": "-1",
+                        "motor-scale": "979",
+                        "encoder-scale": "-1.0",
+                        "unit": "#0.00\"",
+                        "alternate-unit-conversion": "0.153",
+                        "alternate-unit": "#0.000 mm"
+                     },
+                     {
+                        "name": "AZ",
+                        "function": "DCF",
+                        "description": "Collimator Focus",
+                        "initialization-command": "LTH; HTH; PA1; PSE; ECI; EDI;",
+                        "home-command": "MR-42500; GO; ID; HM0; MA0; GO; ID;",
+                        "velocity": "7500",
+                        "acceleration": "250000",
+                        "min-value": "7.75",
+                        "max-value": "18.25",
+                        "home-value": "12.12",
+                        "increment-value": "1",
+                        "motor-scale": "78740.2",
+                        "encoder-scale": "6299.21",
+                        "unit": "#0.00 mm",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     },
+                     {
+                        "name": "AT",
+                        "function": "DFW",
+                        "description": "DeVeny SlitViewer Filter Wheel",
+                        "initialization-command": "PA1; HL;",
+                        "home-command": "HR0; MA0; GO; ID;",
+                        "velocity": "75",
+                        "acceleration": "1000",
+                        "min-value": "1",
+                        "max-value": "5",
+                        "home-value": "1",
+                        "increment-value": "1",
+                        "motor-scale": "80",
+                        "encoder-scale": "-1.0",
+                        "unit": "position #",
+                        "alternate-unit-conversion": "-1.0",
+                        "alternate-unit": ""
+                     }
+                  ]
+               }
+            }
+         ]
+      },
+      "pdus": {
+         "pdu": [
+            {
+               "display-name": "DeVeny",
+               "address": "devenypdu.lowell.edu",
+               "port": "23",
+               "enable": "true",
+               "unit-name": "@@@@"
+            },
+            {
+               "display-name": "PDU1",
+               "address": "gwavespdu1.lowell.edu",
+               "port": "23",
+               "enable": "true",
+               "unit-name": "@@@@"
+            },
+            {
+               "display-name": "PDU2",
+               "address": "gwavespdu2.lowell.edu",
+               "port": "23",
+               "enable": "true",
+               "unit-name": "@@@@"
+            }
+         ]
+      },
+      "widget-info": {
+         "common": {
+            "labels": {
+               "label": [
+                  {
+                     "widget-name": "LOISTitle",
+                     "body": "Image Title:"
+                  },
+                  {
+                     "widget-name": "LOISExposureTime",
+                     "body": "Exposure Time (s):"
+                  },
+                  {
+                     "widget-name": "LOISNumExposures",
+                     "body": "Number of Exposures:"
+                  },
+                  {
+                     "widget-name": "LOISFrameType",
+                     "body": "Frame Type:"
+                  },
+                  {
+                     "widget-name": "LOISComment1",
+                     "body": "FITS Comment 1:"
+                  },
+                  {
+                     "widget-name": "LOISComment2",
+                     "body": "FITS Comment 2:"
+                  },
+                  {
+                     "widget-name": "LOISAmplifier",
+                     "body": "Amplifier:"
+                  },
+                  {
+                     "widget-name": "LOISSubframe",
+                     "body": "Subframe:"
+                  },
+                  {
+                     "widget-name": "LOISBinFactor",
+                     "body": "Binning Factor:"
+                  },
+                  {
+                     "widget-name": "LOISOverScan",
+                     "body": "Over Scan:"
+                  },
+                  {
+                     "widget-name": "AutoPopulateImageTitle",
+                     "body": "Auto Populate Image Title"
+                  },
+                  {
+                     "widget-name": "ReadoutSound",
+                     "body": "End of Readout Sound File:"
+                  },
+                  {
+                     "widget-name": "ExposureSound",
+                     "body": "End of Exposure Sound File:"
+                  },
+                  {
+                     "widget-name": "SeriesSound",
+                     "body": "End of Series Sound File:"
+                  },
+                  {
+                     "widget-name": "BlockedExposureSound",
+                     "body": "Blocked Exposure Sound File:"
+                  },
+                  {
+                     "widget-name": "EnableButton",
+                     "body": "Enable"
+                  },
+                  {
+                     "widget-name": "DisableButton",
+                     "body": "Disable"
+                  },
+                  {
+                     "widget-name": "StatusButton",
+                     "body": "Get Status"
+                  },
+                  {
+                     "widget-name": "LampsOffButton",
+                     "body": "All Lamps Off"
+                  },
+                  {
+                     "widget-name": "CDSImage",
+                     "body": "CDS Image"
+                  }
+               ]
+            },
+            "tooltips": {
+               "tooltip": [
+                  {
+                     "widget-name": "TestExposure",
+                     "body": {
+                        "__cdata": "\nTakes an image and stores it in \"test.fits\".\nThis will override the previous test image.\nSingle Frame\\, 1 Exposure.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "PromoteTestExposure",
+                     "body": {
+                        "__cdata": "\nPromotes the test image \"test.fits\" to the next numbered image.\nThis only works if the test image was the last command/action.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "GoExposure",
+                     "body": {
+                        "__cdata": "\nSingle Frame\\, 1 or Multiple Exposures.\nSave in Numbered Image File.\nNOTE: Stop Series Button will stop multiple exposure series\n      as soon as the current one is finished.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "Reset",
+                     "body": {
+                        "__cdata": "\nResets all the fields to default values\nDefault Values are read from the config file.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "InitializeFilterWheel",
+                     "body": "Initialize the Filter Wheel Axis."
+                  },
+                  {
+                     "widget-name": "MoveFilterWheel",
+                     "body": "Move Filter Wheel Now."
+                  },
+                  {
+                     "widget-name": "HomeFilterWheel",
+                     "body": "Resynchronize Filter Wheel to position 1."
+                  },
+                  {
+                     "widget-name": "InitializeAllAxes",
+                     "body": "Sends the initialize commands for all axes on this card."
+                  },
+                  {
+                     "widget-name": "HomeAllAxes",
+                     "body": "Sends the Home command for all axes on this card."
+                  },
+                  {
+                     "widget-name": "KillAllAxes",
+                     "body": "Kills All the Active Commands."
+                  },
+                  {
+                     "widget-name": "LOISTitleLabel",
+                     "body": "The content of this text box will be in FITS OBJNAME && OBJECT keys."
+                  },
+                  {
+                     "widget-name": "AutoPopulateImageTitleButton",
+                     "body": "Selecting this check box causes the Image Title to be populated automatically by the science target name."
+                  },
+                  {
+                     "widget-name": "ReadoutSound",
+                     "body": {
+                        "__cdata": "\n\"Readout Complete\" sound will play after a readout \nhas been completed. It does not depend on whether \nit was the end of a series or not.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "ExposureSound",
+                     "body": {
+                        "__cdata": "\n\"Exposure Complete\" sound will play at the end of each \nexposure (start of the readout) within a series where\nnum_exposures > 1 except for the last one. The last\nlast exposure in the series is pre-empted with the\n\"Series Complete\" sound so if that sound is off\\, nothing\nwill play.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "SeriesSound",
+                     "body": {
+                        "__cdata": "\n\"Series Complete\" sound will play at the end of the last\nexposure for the series and it overrides \"Exposure Complete\"\nsound so for num_exposures = 1 only \"Series Complete\" sound\nwill play.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "BlockedExposureSound",
+                     "body": {
+                        "__cdata": "\n\"Blocked Exposure\" sound will play if LOIS detects a problem\nwith the exposure\\, such as bad telemetry\\, and blocks the\nexposure. Please check LOIS logs for more information for\nthe reason the exposure was blocked.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "AxisStatusLabel",
+                     "body": {
+                        "__cdata": "\n1     P   Moving in positive direction\n1     M   Moving in negative direction\n\n2     D   Done (ID\\, II or IN command has been executed\\, set to N by this command or IC command)\n2     N   No ID executed yet\n  \n3     L   Axis in overtravel. Char 4 tells which direction. Set to N when limit switch is not active.\n3     N   Not in overtravel in this direction\n\n4     H   Home switch active. Set to N when home switch is not active.\n4     N   Home switch not active        "
+                     }
+                  }
+               ]
+            }
+         },
+         "lmi": {
+            "tooltips": {
+               "tooltip": [
+                  {
+                     "widget-name": "TcsOffset",
+                     "body": {
+                        "__cdata": "\nSends pointing offset command to the DCT TCS. The following options are available for types:\n- tplane (tangent plane) - default\n- simple (coordinate based)\n- pa (position angle based)\n\nAll offsets supported directly by the TCS are absolute not relative. An offset of\n0\\, 0 always returns to the original pointing origin specified with the Science Target\\,\nor the last pointing that was 'absorbed'.\n\nThe units are:\n- tplane: arc-seconds for both offsets\n- simple: offset1 in seconds of time & offset2 in arc-seconds\n- pa: offset1 in arc-seconds & offset2 in degrees\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "TcsOffsetSend",
+                     "body": "Sends pointing offset command to the DCT TCS."
+                  },
+                  {
+                     "widget-name": "TcsOffsetClear",
+                     "body": "Sets the absolute offset to 0.0\\, 0.0."
+                  },
+                  {
+                     "widget-name": "TcsOffsetAbsorb",
+                     "body": "Current position becomes the pointing origin."
+                  },
+                  {
+                     "widget-name": "RelOffset",
+                     "body": {
+                        "__cdata": "\nSimulates sending of a relative pointing offset command to the DCT TCS. The type options\nand units are similar to the absolute offset.\n\nTCS only supports and understands absolute offsets. We are simulating a relative offset\nby sending an absoulte offset and then issuing an absorb command immediately afterwards \nto move the TCS's pointing reference.\n\nNeither the TCS or the LMI LOUI are keeping track of the origin so to go back to the original\nscience target\\, the user needs to either issue the slew command again or trace back the offset\npath back to the origin. Absolute and relative offsets should not be intermingled.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "RelOffsetSend",
+                     "body": "Sends absolute offset and absorb commands sequentially to simulate a reletive offset."
+                  },
+                  {
+                     "widget-name": "DitherLabel",
+                     "body": {
+                        "__cdata": "\nPerforms a dither function based on a pattern file.\nFormat of the input lines:\n\"Title\" exposureTime offset1 offset2 filterName \"Comment\"\n\nOffsets supported directly by the TCS are absolute not relative. An offset of\n0\\, 0 always returns to the original pointing origin specified with the Science \nTarget\\, or the last pointing that was 'absorbed'.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "SlewLabel",
+                     "body": {
+                        "__cdata": "\nPerforms a slew\\, dither\\, or a filter move based on a pattern file.\nPlease refer to the documentation on Confluence for the format of \nthe input lines.\n\nOffsets supported directly by the TCS are absolute not relative. An offset of\n0\\, 0 always returns to the original pointing origin specified with the Science \nTarget\\, or the last pointing that was 'absorbed'.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "LoadPatternFileButton",
+                     "body": {
+                        "__cdata": "\nLoads the pattern file and validates the input.\nThe default extension is *.txt but the dialog box\nallows selection of other types.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "ExecutePatternFileButton",
+                     "body": {
+                        "__cdata": "\nExecutes the commands in the current row of the pattern file.\nThe commands can include a move (slew or dither)\\, filter move\\, and\nand exposure command.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "AbortPatternFileButton",
+                     "body": {
+                        "__cdata": "\nAborts the execution of the pattern as soon as possible. If an exposure\nhas started\\, LOIS may decide to continue the exposure depending on where\nit is in its execution loop. The file will not be saved.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "PausePatternFileButton",
+                     "body": {
+                        "__cdata": "\nPauses the execution of the pattern at the next actionable item. An\nexposure or a series of exposures will continue till concluded.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "ResumePatternFileButton",
+                     "body": "Resumes the execution of the pattern."
+                  },
+                  {
+                     "widget-name": "PatternDitherMaximumLabel",
+                     "body": {
+                        "__cdata": "\nIf guiding\\, make sure that this value (maximum dither \nradius) is not larger than the dither tolerance for the \nguide star.\n\nThe guider code does not check for this value and if this\ncondition is violated\\, the probe will reach a limit and \nthe guide star will not be re-acquired properly.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "FocusBase",
+                     "body": {
+                        "__cdata": "\nThe focus base is the midpoint of the focus sweep. The first acquisition \nis done there and then the focus sweep starts from low to high. If the \nfocus fails or is aborted it will return to this value\\, irrespective of \nwhat the focus base was before the script ran.\n        "
+                     }
+                  }
+               ]
+            }
+         },
+         "joe": {
+            "tooltips": {
+               "tooltip": [
+                  {
+                     "widget-name": "ZernikesSendAccumulatedValues",
+                     "body": {
+                        "__cdata": "\nSend current values to JOE\\, accumulate on JOE\\,\nand send the results to AOS by publishing to broker.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "ZernikesClearJoeAccumulator",
+                     "body": "Clear (set to 0) the accumulated values on JOE."
+                  },
+                  {
+                     "widget-name": "ZernikesClearAll",
+                     "body": "Clears JOE's accumulator and sends zeros to AOS."
+                  },
+                  {
+                     "widget-name": "ZernikesDisplayJoeAccumulator",
+                     "body": "Get the accumulated values on JOE and update the display."
+                  },
+                  {
+                     "widget-name": "ZernikesReset",
+                     "body": "Reset the values in the text boxes to 0."
+                  }
+               ]
+            }
+         },
+         "rcprobe": {
+            "tooltips": {
+               "tooltip": [
+                  {
+                     "widget-name": "InitialExposure",
+                     "body": "Takes the first image to be used as guide reference."
+                  },
+                  {
+                     "widget-name": "StartGuide",
+                     "body": "Sends the Guide On command to the TCS and starts the occultation series."
+                  },
+                  {
+                     "widget-name": "StopGuide",
+                     "body": "Sends the Guide Off command to the TCS and aborts the occultation series."
+                  },
+                  {
+                     "widget-name": "GuideOnOff",
+                     "body": {
+                        "__cdata": "\nA push button for issuing the command.\nIt does not reflect the state of guiding.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "VirtualGuideOn",
+                     "body": {
+                        "__cdata": "\nA push button for issuing the command.\nIt does not reflect the state of guiding.\n\nDisables the Guide On/Off buttons.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "VirtualGuideOff",
+                     "body": {
+                        "__cdata": "\nA push button for issuing the command.\nIt does not reflect the state of guiding.\n\nRe-enables the Guide On/Off buttons.\n        "
+                     }
+                  }
+               ]
+            }
+         },
+         "deveny": {
+            "labels": {
+               "label": [
+                  {
+                     "widget-name": "SlitWidthTitle",
+                     "body": "Slit Width (″)"
+                  },
+                  {
+                     "widget-name": "GratingTiltTitle",
+                     "body": "Grating Tilt (°)"
+                  },
+                  {
+                     "widget-name": "CollimatorFocusTitle",
+                     "body": "Collimator Focus (mm)"
+                  }
+               ]
+            },
+            "tooltips": {
+               "tooltip": [
+                  {
+                     "widget-name": "StatusButton",
+                     "body": {
+                        "__cdata": "\nSend a \"DN0\" command to the PDU which will return\nthe status of all the sockets in this PDU.\n\nThe timestamp will update automatically when the\nmessage is received from the PDU.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "LampsOffButton",
+                     "body": {
+                        "__cdata": "\nSend \"Fxx\" command to the PDU for all the lamps.\nThis will turn all the lamps off.\n        "
+                     }
+                  },
+                  {
+                     "widget-name": "EnableButton",
+                     "body": "Enables the buttons for controlling the lamps."
+                  },
+                  {
+                     "widget-name": "DisableButton",
+                     "body": {
+                        "__cdata": "\nDisables the buttons so one does not accidentally\nturn on a lamp in the middle of an observation.\n        "
+                     }
+                  }
+               ]
+            }
+         },
+         "nihts": {
+            "tooltip": [
+               {
+                  "widget-name": "CDSImageButton",
+                  "body": "Selecting this check box adds {cds=true} to the LOIS exposure command."
+               }
+            ]
+         }
+      }
+   }
+}
