@@ -23,8 +23,6 @@ import floor from "../assets/images/lawn.jpg";
 import left_shutter from "../assets/models/LDT-Dome-left-shutter.glb";
 import right_shutter from "../assets/models/LDT-Dome-right-shutter.glb";
 
-
-
 // Extend will make OrbitControls available as a JSX element
 // called orbitControls for us to use.
 extend({ OrbitControls });
@@ -66,9 +64,7 @@ function DomeBottom() {
     b.scene.traverse(function (object) {
         if (object.isMesh) {
             object.material.format = THREE.RGBAFormat;
-            //object.material.side = THREE.DoubleSide;
             object.material.color.set(0x2f2f2f);
-            // object.castShadow = true;
             object.material.transparent = true;
             object.material.opacity = 0.5;
         }
@@ -79,18 +75,10 @@ function DomeBottom() {
 
 function DomeTop() {
     const b = useLoader(GLTFLoader, dome_top)
-    // const xyz = new THREE.MeshStandardMaterial({
-    // })
     b.scene.traverse(function (object) {
         if (object.isMesh) {
             object.material.format = THREE.RGBAFormat;
-            // object.material.alphaMode = "BLEND";
-            // object.material.alphaTest = 0;
-            // object.material.alphaWrite = true;
-            // object.material.depthWrite = false;
             object.material.color.set(0xffffff);
-            // object.material.side = THREE.DoubleSide;
-            // object.receiveShadow = true;
             object.material.transparent = true;
             object.material.opacity = 0.3;
         }
@@ -132,19 +120,6 @@ function DomeShutterRight() {
     return <primitive object={rightS.scene} position={[0, -8, 0.2]}
         receiveShadow />
 }
-
-/* const GetInfo = () => {
-    const { gl } = useThree();
-    gl.shadowMap.enabled = true;
-    gl.shadowMap.type = THREE.PCFSoftShadowMap
-    useEffect(() => {
-        // gl === WebGLRenderer
-        // gl.info.calls
-        gl.shadowMap.enabled = true;
-        console.log(gl.info);
-    });
-    return null;
-}; */
 
 const CameraControls = () => {
     // Get a reference to the Three.js Camera, and the canvas html element.
@@ -204,7 +179,6 @@ function Dome(props) {
                     {...props}
                     ref={ref} >
                     <sphereBufferGeometry attach="geometry" args={[300, 360, 90]} />
-
                     <meshBasicMaterial attach="material" map={texture} side={THREE.BackSide} />
                 </mesh>
             </object3D>
@@ -232,9 +206,6 @@ function Telescope(props) {
     ftexture.repeat.set(16, 16);
     ftexture.anisotropy = 16;
 
-    // GetInfo()
-
-
     useFrame(state => {
         // azimuth = 180. - azimuth
         // elevation = 10.0
@@ -252,18 +223,9 @@ function Telescope(props) {
 
     })
 
-    // const [width, setWidth] = useState(window.innerWidth);
-
     // Return the view, these are regular Threejs elements expressed in JSX
     return (
-
-
         <object3D>
-            {/* <object3D ref={group}>
-                <PWBarrel receiveShadow currentColor={"Red"} />
-            </object3D> */}
-
-
             <object3D ref={mountGroup}>
                 <PWYoke receiveShadow />
                 <object3D ref={group}>
@@ -277,7 +239,6 @@ function Telescope(props) {
                     scale={1.0}
                     position={[10, 10, 0]} >
                     <planeGeometry args={[300, 300]} />
-
                     <meshStandardMaterial side={THREE.DoubleSide}
                         opacity={1.0} color={'rgb(100,100,100)'} attach="material"
                         map={ftexture} repeat={[.2, .2]} />
@@ -290,15 +251,12 @@ function Telescope(props) {
                     <cylinderGeometry attach="geometry" args={[9.1, 9.1, 3, 16]} />
                     <meshBasicMaterial attach="material" color={'rgb(80,80,80)'}
                         transparent="true" opacity={0.8} />
-                    {/* object.material.transparent = true;
-            object.material.opacity = 0.3; */}
                 </mesh>
                 <mesh
                     ref={floorRef}
                     scale={1.0}
                     position={[0, 0, -0.5]} >
                     <circleGeometry args={[10, 50]} />
-
                     <meshStandardMaterial side={THREE.DoubleSide}
                         opacity={1.0} color={'rgb(50,60,60)'} />
                 </mesh>
@@ -369,7 +327,6 @@ function ThreeD({ azimuth, elevation, dome_az, dome_shut, trackOn }) {
                     <Telescope position={[0.0, -5, 0]} azimuth={azimuth} elevation={elevation} />
                 </Canvas>
             </Suspense>
-
         </div>
     );
 }

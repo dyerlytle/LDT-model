@@ -1,12 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-    Form
-} from 'react-bootstrap';
 import './styles.css';
 import mqtt from "mqtt";
 
-// var oldTrackOn = false;
 
 class StatusWindow extends React.Component {
     constructor(props) {
