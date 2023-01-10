@@ -70,7 +70,6 @@ function MainPage() {
             <ICNavbar />
 
             {/* Add a little space at the top, below the Navbar, above the Grid. */}
-            console.log(trackOn);
             <Row style={{ marginLeft: 0, marginRight: 0 }} ><p />
                 <StatusWindow
                     setAzimuthFromStatus={setAzimuthFromStatus}

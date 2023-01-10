@@ -2,6 +2,7 @@
     "name": "first-react",
     "version": "0.1.0",
     "private": true,
+    "homepage": "/ldt-model",
     "dependencies": {
         "@react-three/fiber": "^7.0.6",
         "@testing-library/jest-dom": "^5.14.1",
