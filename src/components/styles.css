@@ -42,6 +42,7 @@ canvas {
 #navi {
     width: 450px;
     height: 450px;
+    
     position: absolute;
     top: 20;
     left: 50;
@@ -57,6 +58,7 @@ canvas {
     height: 600px;
     position: left;
     float: left;
+    /* padding-top: 100px; */
     left: 51%;
     outline: 1px solid rgb(148, 148, 91);
 }
@@ -67,8 +69,13 @@ canvas {
 
 .color-nav {
     background-color: rgb(141, 171, 255);
+    
 }
 
 .controlwitch {
     color: yellow;
+}
+
+.threedcol {
+    padding-top: 10px;
 }

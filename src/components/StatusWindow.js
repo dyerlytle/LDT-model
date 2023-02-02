@@ -8,14 +8,17 @@ class StatusWindow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            value: 'Status will be displayed here.',
+            value: 'not tracking',
             stat_topic: 'choose'
         };
+        global.outtext = "not tracking";
     }
 
-    componentDidMount() {
-        this.handleConnect();
-    }
+
+
+    // componentDidMount() {
+    // this.handleConnect();
+    // }
 
     doConnect = (host, mqttOptions) => {
         console.log(host);
@@ -39,6 +42,7 @@ class StatusWindow extends React.Component {
             this.client.on("message", (topic, message) => {
                 const payload = { topic, message: message.toString() };
                 const changed = message.toString();
+                // var outtext;
 
                 // console.log("got a message");
                 var parser = new DOMParser();
@@ -54,21 +58,28 @@ class StatusWindow extends React.Component {
                 mountdomeaz = parseFloat(mountdomeaz[0].childNodes[0].nodeValue);
                 if (!mountdomeaz) { mountdomeaz = "0" }
                 var azaz = parseFloat(az);
-                
+
                 // console.log(mountdomeaz);
-                var domeaz = azaz + parseFloat(mountdomeaz);
+                var domeaz = azaz - parseFloat(mountdomeaz);
                 // console.log(domeaz);
                 domeaz = domeaz.toString();
                 // console.log(this.props.trackOn);
                 var oldTrackOn = trackOn;
                 var trackOn = this.props.getTrack();
-                // console.log(trackOn);
-                
+                console.log(trackOn);
+
                 if (trackOn) {
                     this.props.setAzimuthFromStatus(az);
                     this.props.setElevationFromStatus(el);
                     this.props.setDomeAzFromStatus(domeaz);
+                    global.outtext = "azimuth: " + az;
+                    global.outtext = global.outtext + "\nelevation: " + el;
+                    global.outtext = global.outtext + "\ndome-az: " + domeaz;
+                } else {
+                    global.outtext = "not tracking";
                 }
+
+                this.setState({ value: global.outtext });
             });
         }
     };
@@ -149,25 +160,16 @@ class StatusWindow extends React.Component {
         if (trackOn && !this.client) {
             this.handleConnect();
         }
+        if (!trackOn) {
+            global.outtext = "not tracking";
+        }
         return (
             <div>
-                {/* <Form.Select
-                    id="statselect"
-                    size="sm"
-                    onChange={this.onChangeStatus.bind(this)}
-                >
-                    <option value="choose">Choose agent status</option>
-                    <option value="mount">Mount</option>
-                    <option value="camera">Camera</option>
-                    <option value="ccdcooler">CcdCooler</option>
-                    <option value="filterwheel">FilterWheel</option>
-                    <option value="weather">Weather</option>
-                </Form.Select>
                 <label>
                     <textarea id="statusarea" name="status"
-                        rows="15" cols="40" value={this.state.value}
+                        rows="10" cols="40" value={this.state.value}
                         readOnly />
-                </label> */}
+                </label>
             </div>
         );
     }

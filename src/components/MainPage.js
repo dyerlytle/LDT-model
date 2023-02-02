@@ -68,17 +68,10 @@ function MainPage() {
     return (
         <Container fluid style={{ width: "98%", height: "100%" }}>
             <ICNavbar />
-
             {/* Add a little space at the top, below the Navbar, above the Grid. */}
-            <Row style={{ marginLeft: 0, marginRight: 0 }} ><p />
-                <StatusWindow
-                    setAzimuthFromStatus={setAzimuthFromStatus}
-                    setElevationFromStatus={setElevationFromStatus}
-                    setDomeAzFromStatus={setDomeAzFromStatus}
-                    getTrack={getTrack} />
-            </Row>
+
             <Row style={{ marginLeft: 0, marginRight: 0 }} >
-                <Col md="auto"><ThreeD azimuth={azimuth}
+                <Col className="threedcol" md="auto"><ThreeD azimuth={azimuth}
                     elevation={elevation} dome_az={dome_az}
                     dome_shut={dome_shut} trackOn={trackOn} /></Col>
                 {/* <Col md="auto"><CanvasControls /></Col> */}
@@ -87,8 +80,15 @@ function MainPage() {
                     setElevationRemote={setElevationRemote}
                     setDomeAzRemote={setDomeAzRemote}
                     setDomeShutRemote={setDomeShutRemote}
-                    trackSwitchAction={trackSwitchAction}
-                /></Col>
+                    trackSwitchAction={trackSwitchAction} />
+                    <p />
+                    <StatusWindow
+                        setAzimuthFromStatus={setAzimuthFromStatus}
+                        setElevationFromStatus={setElevationFromStatus}
+                        setDomeAzFromStatus={setDomeAzFromStatus}
+                        getTrack={getTrack}
+                        trackOn={trackOn} />
+                </Col>
             </Row>
 
             <p />
